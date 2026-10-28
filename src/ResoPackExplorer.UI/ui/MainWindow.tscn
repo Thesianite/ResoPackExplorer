@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://chodvnaaor5nn"]
 
 [ext_resource type="Script" uid="uid://c7c4ttgvxtehv" path="res://ui/PackageViewer.cs" id="1_cy2lm"]
+[ext_resource type="Theme" uid="uid://2lwbamn2l87o" path="res://assets/main_theme.tres" id="1_uc8ju"]
 
 [node name="MainWindow" type="Node" unique_id=863100946]
 
@@ -11,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_uc8ju")
 script = ExtResource("1_cy2lm")
 _nameLabel = NodePath("LeftSideWindow/VBoxContainer/NameLabel")
 _recordTypeLabel = NodePath("LeftSideWindow/VBoxContainer/RecordTypeLabel")
@@ -55,4 +57,5 @@ layout_mode = 2
 
 [node name="OpenFileButton" type="Button" parent="PackageViewer/LeftSideWindow/VBoxContainer" unique_id=325357877]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.9764706, 0.972549, 0.4392157, 1)
 text = "Load File"
