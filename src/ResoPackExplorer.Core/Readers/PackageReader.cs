@@ -1,4 +1,3 @@
-using System.Drawing;
 using SharpCompress.Archives;
 
 namespace ResoPackExplorer.Core.Readers
