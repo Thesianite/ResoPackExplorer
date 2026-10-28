@@ -84,3 +84,5 @@ grow_horizontal = 2
 grow_vertical = 2
 scroll_hint_mode = 3
 metadata/_edit_use_anchors_ = true
+
+[node name="MainView" type="Node3D" parent="." unique_id=1280741874]

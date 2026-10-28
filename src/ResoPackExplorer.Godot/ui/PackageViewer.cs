@@ -15,6 +15,7 @@ public partial class PackageViewer : Control
 	[Export] private FileDialog _fileDialog;
 	[Export] private Tree _assetTree;
 
+
     public override void _Ready()
     {
 		if (_openButton != null)
@@ -90,6 +91,9 @@ public partial class PackageViewer : Control
 				string fileName = segments[segments.Length - 1];
 				fileItem.SetText(0, $"{fileName} ({size} bytes)");
             }
+
+			ResoniteAssetLoader _loader = new ResoniteAssetLoader();
+			_loader.LoadPackageAssets(packagePath);
 		}
 	}
 
