@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://chodvnaaor5nn"]
+
+[ext_resource type="Script" uid="uid://c7c4ttgvxtehv" path="res://ui/PackageViewer.cs" id="1_cy2lm"]
+
+[node name="MainWindow" type="Node" unique_id=863100946]
+
+[node name="PackageViewer" type="Control" parent="." unique_id=1375124587 node_paths=PackedStringArray("_nameLabel", "_openButton", "_fileDialog")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cy2lm")
+_nameLabel = NodePath("NameLabel")
+_openButton = NodePath("OpenFileButton")
+_fileDialog = NodePath("FileDialog")
+metadata/_custom_type_script = "uid://c7c4ttgvxtehv"
+metadata/_edit_use_anchors_ = true
+
+[node name="NameLabel" type="Label" parent="PackageViewer" unique_id=1011520101]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Name: N/A"
+
+[node name="OpenFileButton" type="Button" parent="PackageViewer" unique_id=325357877]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 40.0
+offset_right = 58.0
+offset_bottom = 71.0
+text = "Load"
+
+[node name="FileDialog" type="FileDialog" parent="PackageViewer" unique_id=110568810]
