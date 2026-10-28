@@ -1,9 +1,7 @@
 using Godot;
-using ResPackExplorer.Core.Models;
-using ResPackExplorer.Core.Readers;
-using System;
+using ResoPackExplorer.Core.Models;
+using ResoPackExplorer.Core.Readers;
 using System.IO;
-using System.Numerics;
 
 [GlobalClass]
 public partial class PackageViewer : Control

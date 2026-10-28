@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\ResPackExplorer.Core\ResPackExplorer.Core.csproj" />
+    <ProjectReference Include="..\ResoPackExplorer.Core\ResoPackExplorer.Core.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

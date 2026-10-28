@@ -1,7 +1,7 @@
 using System.Drawing;
 using SharpCompress.Archives;
 
-namespace ResPackExplorer.Core.Readers
+namespace ResoPackExplorer.Core.Readers
 {
     public class PackageReader : IDisposable
     {
