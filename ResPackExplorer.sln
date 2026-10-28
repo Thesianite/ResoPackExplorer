@@ -5,7 +5,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResoPackExplorer.Core", "sr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResoPackExplorer.CLI", "src\ResoPackExplorer.CLI\ResoPackExplorer.CLI.csproj", "{001D133F-E314-4802-94F8-EB944786E023}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResoPackExplorer.UI", "src\ResoPackExplorer.UI\ResoPackExplorer.UI.csproj", "{3D195745-8BE1-4692-8A81-75EECABDAD6F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResoPackExplorer.Godot", "src\ResoPackExplorer.Godot\ResoPackExplorer.Godot.csproj", "{3D195745-8BE1-4692-8A81-75EECABDAD6F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
