@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResPackExplorer.Core", "src\ResPackExplorer.Core\ResPackExplorer.Core.csproj", "{210213D5-D14E-4515-AAFA-1C6970F08861}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResoPackExplorer.Core", "src\ResoPackExplorer.Core\ResoPackExplorer.Core.csproj", "{210213D5-D14E-4515-AAFA-1C6970F08861}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResPackExplorer.CLI", "src\ResPackExplorer.CLI\ResPackExplorer.CLI.csproj", "{001D133F-E314-4802-94F8-EB944786E023}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResoPackExplorer.CLI", "src\ResoPackExplorer.CLI\ResoPackExplorer.CLI.csproj", "{001D133F-E314-4802-94F8-EB944786E023}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResPackExplorer.UI", "src\ResPackExplorer.UI\ResPackExplorer.UI.csproj", "{3D195745-8BE1-4692-8A81-75EECABDAD6F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResoPackExplorer.UI", "src\ResoPackExplorer.UI\ResoPackExplorer.UI.csproj", "{3D195745-8BE1-4692-8A81-75EECABDAD6F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
