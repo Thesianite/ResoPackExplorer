@@ -59,3 +59,22 @@ layout_mode = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0.9764706, 0.972549, 0.4392157, 1)
 text = "Load File"
+
+[node name="PackageExplorer" type="Panel" parent="PackageViewer" unique_id=1606985378]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -228.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="AssetTree" type="Tree" parent="PackageViewer/PackageExplorer" unique_id=128968148]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
