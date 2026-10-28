@@ -12,6 +12,7 @@ public partial class PackageViewer : Control
 	[Export] private Label _ownerIdLabel;
 	[Export] private Button _openButton;
 	[Export] private FileDialog _fileDialog;
+	[Export] private Tree _assetTree;
 
     public override void _Ready()
     {
@@ -55,6 +56,16 @@ public partial class PackageViewer : Control
 			_nameLabel.Text = $"Name: {record.Name ?? "Name: N/A"}";
 			_recordTypeLabel.Text = $"Type: { record.RecordType ?? "Type: N/A"}";
 			_ownerIdLabel.Text = $"Owner: {record.OwnerId ?? "Owner: N/A"}";
+
+
+			TreeItem treeRoot = _assetTree.CreateItem();
+			_assetTree.HideRoot = true;
+			foreach (var (key, size) in packageReader.GetEntries())
+            {
+                GD.Print($"{key} ({size} bytes)");
+				TreeItem child = _assetTree.CreateItem(treeRoot);
+				child.SetText(0, $"{key} ({size} bytes)");
+            }
 		}
 	}
 

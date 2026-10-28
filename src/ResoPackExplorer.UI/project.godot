@@ -14,7 +14,7 @@ config/name="ResoPackExplorer"
 config/description="Resonite Package Explorer"
 run/main_scene="uid://chodvnaaor5nn"
 config/features=PackedStringArray("4.7", "C#", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://assets/icon.svg"
 
 [display]
 

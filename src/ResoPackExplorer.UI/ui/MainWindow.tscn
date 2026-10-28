@@ -5,7 +5,7 @@
 
 [node name="MainWindow" type="Node" unique_id=863100946]
 
-[node name="PackageViewer" type="Control" parent="." unique_id=1375124587 node_paths=PackedStringArray("_nameLabel", "_recordTypeLabel", "_ownerIdLabel", "_openButton", "_fileDialog")]
+[node name="PackageViewer" type="Control" parent="." unique_id=1375124587 node_paths=PackedStringArray("_nameLabel", "_recordTypeLabel", "_ownerIdLabel", "_openButton", "_fileDialog", "_assetTree")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,10 +19,15 @@ _recordTypeLabel = NodePath("LeftSideWindow/VBoxContainer/RecordTypeLabel")
 _ownerIdLabel = NodePath("LeftSideWindow/VBoxContainer/OwnerIdLabel")
 _openButton = NodePath("LeftSideWindow/VBoxContainer/OpenFileButton")
 _fileDialog = NodePath("FileDialog")
+_assetTree = NodePath("PackageExplorer/AssetTree")
 metadata/_custom_type_script = "uid://c7c4ttgvxtehv"
 metadata/_edit_use_anchors_ = true
 
 [node name="FileDialog" type="FileDialog" parent="PackageViewer" unique_id=110568810]
+title = "Open a File"
+ok_button_text = "Load"
+file_mode = 0
+use_native_dialog = true
 
 [node name="LeftSideWindow" type="Panel" parent="PackageViewer" unique_id=1724949982]
 layout_mode = 1
@@ -59,3 +64,23 @@ layout_mode = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0.9764706, 0.972549, 0.4392157, 1)
 text = "Load File"
+
+[node name="PackageExplorer" type="Panel" parent="PackageViewer" unique_id=1606985378]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.759375
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="AssetTree" type="Tree" parent="PackageViewer/PackageExplorer" unique_id=128968148]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scroll_hint_mode = 3
+metadata/_edit_use_anchors_ = true
