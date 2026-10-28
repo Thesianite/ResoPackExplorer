@@ -4,7 +4,7 @@
 
 [node name="MainWindow" type="Node" unique_id=863100946]
 
-[node name="PackageViewer" type="Control" parent="." unique_id=1375124587 node_paths=PackedStringArray("_nameLabel", "_recordTypeLable", "_openButton", "_fileDialog")]
+[node name="PackageViewer" type="Control" parent="." unique_id=1375124587 node_paths=PackedStringArray("_nameLabel", "_recordTypeLabel", "_openButton", "_fileDialog")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,7 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cy2lm")
 _nameLabel = NodePath("LeftSideWindow/VBoxContainer/NameLabel")
-_recordTypeLable = NodePath("LeftSideWindow/VBoxContainer/RecordTypeLabel")
+_recordTypeLabel = NodePath("LeftSideWindow/VBoxContainer/RecordTypeLabel")
 _openButton = NodePath("LeftSideWindow/VBoxContainer/OpenFileButton")
 _fileDialog = NodePath("FileDialog")
 metadata/_custom_type_script = "uid://c7c4ttgvxtehv"
