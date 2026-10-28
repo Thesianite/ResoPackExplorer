@@ -53,8 +53,9 @@ class Program
                     Console.WriteLine($" - {key} ({size} bytes)");
                 }
                 
-                Console.WriteLine($"--- End ---\n");
             }
+
+            Console.WriteLine($"\n=== End ===\n");
             
         }
         catch (Exception ex)
