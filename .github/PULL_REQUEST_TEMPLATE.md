@@ -1,3 +1,1 @@
 ## Description
-
-## Type of Change
