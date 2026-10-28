@@ -6,6 +6,7 @@ using System.IO;
 [GlobalClass]
 public partial class PackageViewer : Control
 {
+	// Node references
 	[Export] private Label _nameLabel;
 	[Export] private Label _recordTypeLabel;
 	[Export] private Label _ownerIdLabel;

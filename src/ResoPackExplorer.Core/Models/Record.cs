@@ -3,6 +3,9 @@ using Newtonsoft.Json.Linq;
 
 namespace ResoPackExplorer.Core.Models
 {
+    /// <summary>
+    /// Represents a .record from a Resonite package.
+    /// </summary>
     public class Record
     {
         [JsonProperty("id")]
@@ -26,6 +29,11 @@ namespace ResoPackExplorer.Core.Models
         [JsonProperty("tags")]
         public string[] Tags { get; set; } = Array.Empty<string>();
 
+        /// <summary>
+        /// Convets a <see cref="JObject"/> into an instance of <see cref="Record"/>.
+        /// </summary>
+        /// <param name="json">The JSON object containing the record data.</param>
+        /// <returns>A new <see cref="Record"/> instance from the JSON object's data.</returns>
         public static Record FromJson(JObject json)
         {
             return new Record
