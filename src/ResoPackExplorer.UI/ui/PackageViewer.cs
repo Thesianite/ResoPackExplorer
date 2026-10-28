@@ -32,7 +32,10 @@ public partial class PackageViewer : Control
         base._Ready();
     }
 
-
+	/// <summary>
+	/// Load package by path.
+	/// </summary>
+	/// <param name="packagePath">Package path to load.</param>
 	public void LoadPackage(string packagePath)
 	{
 		if (!File.Exists(packagePath))
