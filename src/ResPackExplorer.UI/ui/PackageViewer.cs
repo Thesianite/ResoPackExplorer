@@ -9,7 +9,7 @@ using System.Numerics;
 public partial class PackageViewer : Control
 {
 	[Export] public Label _nameLabel;
-	[Export] public Label _recordTypeLable;
+	[Export] public Label _recordTypeLabel;
 	[Export] private Button _openButton;
 	[Export] private FileDialog _fileDialog;
 
@@ -50,6 +50,7 @@ public partial class PackageViewer : Control
 			var record = Record.FromJson(json);
 
 			_nameLabel.Text = $"Name: {record.Name ?? "Name: N/A"}";
+			_recordTypeLabel.Text = $"Type: { record.RecordType ?? "Type: N/A"}";
 		}
 	}
 

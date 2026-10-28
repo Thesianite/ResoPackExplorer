@@ -4,7 +4,7 @@
 
 [node name="MainWindow" type="Node" unique_id=863100946]
 
-[node name="PackageViewer" type="Control" parent="." unique_id=1375124587 node_paths=PackedStringArray("_nameLabel", "_openButton", "_fileDialog")]
+[node name="PackageViewer" type="Control" parent="." unique_id=1375124587 node_paths=PackedStringArray("_nameLabel", "_recordTypeLabel", "_openButton", "_fileDialog")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,24 +12,42 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cy2lm")
-_nameLabel = NodePath("NameLabel")
-_openButton = NodePath("OpenFileButton")
+_nameLabel = NodePath("LeftSideWindow/VBoxContainer/NameLabel")
+_recordTypeLabel = NodePath("LeftSideWindow/VBoxContainer/RecordTypeLabel")
+_openButton = NodePath("LeftSideWindow/VBoxContainer/OpenFileButton")
 _fileDialog = NodePath("FileDialog")
 metadata/_custom_type_script = "uid://c7c4ttgvxtehv"
 metadata/_edit_use_anchors_ = true
 
-[node name="NameLabel" type="Label" parent="PackageViewer" unique_id=1011520101]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="FileDialog" type="FileDialog" parent="PackageViewer" unique_id=110568810]
+
+[node name="LeftSideWindow" type="Panel" parent="PackageViewer" unique_id=1724949982]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 298.0
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PackageViewer/LeftSideWindow" unique_id=1738820498]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="NameLabel" type="Label" parent="PackageViewer/LeftSideWindow/VBoxContainer" unique_id=1011520101]
+layout_mode = 2
 text = "Name: N/A"
 
-[node name="OpenFileButton" type="Button" parent="PackageViewer" unique_id=325357877]
-layout_mode = 0
-offset_left = 12.0
-offset_top = 40.0
-offset_right = 58.0
-offset_bottom = 71.0
-text = "Load"
+[node name="RecordTypeLabel" type="Label" parent="PackageViewer/LeftSideWindow/VBoxContainer" unique_id=1938112686]
+layout_mode = 2
+text = "Type: N/A"
 
-[node name="FileDialog" type="FileDialog" parent="PackageViewer" unique_id=110568810]
+[node name="HSeparator" type="HSeparator" parent="PackageViewer/LeftSideWindow/VBoxContainer" unique_id=2284429]
+layout_mode = 2
+
+[node name="OpenFileButton" type="Button" parent="PackageViewer/LeftSideWindow/VBoxContainer" unique_id=325357877]
+layout_mode = 2
+text = "Load"
