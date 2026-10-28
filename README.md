@@ -1,1 +1,1 @@
-# ResPackExplorer
+# ResoPackExplorer

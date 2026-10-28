@@ -1,15 +1,14 @@
 using Godot;
-using ResPackExplorer.Core.Models;
-using ResPackExplorer.Core.Readers;
-using System;
+using ResoPackExplorer.Core.Models;
+using ResoPackExplorer.Core.Readers;
 using System.IO;
-using System.Numerics;
 
 [GlobalClass]
 public partial class PackageViewer : Control
 {
-	[Export] public Label _nameLabel;
-	[Export] public Label _recordTypeLabel;
+	[Export] private Label _nameLabel;
+	[Export] private Label _recordTypeLabel;
+	[Export] private Label _ownerIdLabel;
 	[Export] private Button _openButton;
 	[Export] private FileDialog _fileDialog;
 
@@ -51,6 +50,7 @@ public partial class PackageViewer : Control
 
 			_nameLabel.Text = $"Name: {record.Name ?? "Name: N/A"}";
 			_recordTypeLabel.Text = $"Type: { record.RecordType ?? "Type: N/A"}";
+			_ownerIdLabel.Text = $"Owner: {record.OwnerId ?? "Owner: N/A"}";
 		}
 	}
 

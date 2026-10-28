@@ -1,7 +1,7 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace ResPackExplorer.Core.Models
+namespace ResoPackExplorer.Core.Models
 {
     public class Record
     {

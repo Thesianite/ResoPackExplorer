@@ -1,11 +1,11 @@
-﻿using ResPackExplorer.Core.Models;
-using ResPackExplorer.Core.Readers;
+﻿using ResoPackExplorer.Core.Models;
+using ResoPackExplorer.Core.Readers;
 
 class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("=== ResPackExplorer CLI ===");
+        Console.WriteLine("=== ResoPackExplorer CLI ===");
         
         string packPath = args.Length > 0 ? args[0] : "input.resonitepackage";
         

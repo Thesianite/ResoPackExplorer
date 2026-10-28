@@ -2,7 +2,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Bson;
 using Newtonsoft.Json.Linq;
 
-namespace ResPackExplorer.Core.Readers
+namespace ResoPackExplorer.Core.Readers
 {
     public static class RecordParser
     {

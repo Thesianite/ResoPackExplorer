@@ -1,0 +1,15 @@
+[gd_resource type="Theme" format=3 uid="uid://2lwbamn2l87o"]
+
+[ext_resource type="StyleBox" uid="uid://5ocrtsvw5tsp" path="res://assets/boxes/buttons/basic/button_basic_normal.tres" id="1_0arac"]
+[ext_resource type="StyleBox" uid="uid://cbjkg5it2c5jk" path="res://assets/boxes/buttons/basic/button_basic_disabled.tres" id="1_611f8"]
+[ext_resource type="StyleBox" uid="uid://butxdjjapm468" path="res://assets/boxes/base_style_box_flat.tres" id="1_xgdp2"]
+[ext_resource type="StyleBox" uid="uid://0086r0sivg5q" path="res://assets/boxes/buttons/basic/button_basic_press.tres" id="2_611f8"]
+[ext_resource type="StyleBox" uid="uid://dysudgt8m3g7d" path="res://assets/boxes/buttons/basic/button_basic_hover.tres" id="2_pefyd"]
+
+[resource]
+Button/styles/disabled = ExtResource("1_611f8")
+Button/styles/hover = ExtResource("2_pefyd")
+Button/styles/normal = ExtResource("1_0arac")
+Button/styles/pressed = ExtResource("2_611f8")
+Label/colors/font_color = Color(1, 1, 1, 1)
+Panel/styles/panel = ExtResource("1_xgdp2")

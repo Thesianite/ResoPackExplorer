@@ -1,19 +1,22 @@
 [gd_scene format=3 uid="uid://chodvnaaor5nn"]
 
 [ext_resource type="Script" uid="uid://c7c4ttgvxtehv" path="res://ui/PackageViewer.cs" id="1_cy2lm"]
+[ext_resource type="Theme" uid="uid://2lwbamn2l87o" path="res://assets/main_theme.tres" id="1_uc8ju"]
 
 [node name="MainWindow" type="Node" unique_id=863100946]
 
-[node name="PackageViewer" type="Control" parent="." unique_id=1375124587 node_paths=PackedStringArray("_nameLabel", "_recordTypeLabel", "_openButton", "_fileDialog")]
+[node name="PackageViewer" type="Control" parent="." unique_id=1375124587 node_paths=PackedStringArray("_nameLabel", "_recordTypeLabel", "_ownerIdLabel", "_openButton", "_fileDialog")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_uc8ju")
 script = ExtResource("1_cy2lm")
 _nameLabel = NodePath("LeftSideWindow/VBoxContainer/NameLabel")
 _recordTypeLabel = NodePath("LeftSideWindow/VBoxContainer/RecordTypeLabel")
+_ownerIdLabel = NodePath("LeftSideWindow/VBoxContainer/OwnerIdLabel")
 _openButton = NodePath("LeftSideWindow/VBoxContainer/OpenFileButton")
 _fileDialog = NodePath("FileDialog")
 metadata/_custom_type_script = "uid://c7c4ttgvxtehv"
@@ -45,9 +48,14 @@ text = "Name: N/A"
 layout_mode = 2
 text = "Type: N/A"
 
+[node name="OwnerIdLabel" type="Label" parent="PackageViewer/LeftSideWindow/VBoxContainer" unique_id=1027281230]
+layout_mode = 2
+text = "Owner: N/A"
+
 [node name="HSeparator" type="HSeparator" parent="PackageViewer/LeftSideWindow/VBoxContainer" unique_id=2284429]
 layout_mode = 2
 
 [node name="OpenFileButton" type="Button" parent="PackageViewer/LeftSideWindow/VBoxContainer" unique_id=325357877]
 layout_mode = 2
-text = "Load"
+theme_override_colors/font_color = Color(0.9764706, 0.972549, 0.4392157, 1)
+text = "Load File"
