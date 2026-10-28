@@ -6,6 +6,9 @@
 [ext_resource type="StyleBox" uid="uid://0086r0sivg5q" path="res://assets/boxes/buttons/basic/button_basic_press.tres" id="2_611f8"]
 [ext_resource type="StyleBox" uid="uid://dysudgt8m3g7d" path="res://assets/boxes/buttons/basic/button_basic_hover.tres" id="2_pefyd"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uc8ju"]
+bg_color = Color(0.07058824, 0.13725491, 0.19215687, 1)
+
 [resource]
 Button/styles/disabled = ExtResource("1_611f8")
 Button/styles/hover = ExtResource("2_pefyd")
@@ -13,3 +16,4 @@ Button/styles/normal = ExtResource("1_0arac")
 Button/styles/pressed = ExtResource("2_611f8")
 Label/colors/font_color = Color(1, 1, 1, 1)
 Panel/styles/panel = ExtResource("1_xgdp2")
+Tree/styles/panel = SubResource("StyleBoxFlat_uc8ju")
