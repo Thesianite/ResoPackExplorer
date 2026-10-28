@@ -1,6 +1,7 @@
 using Godot;
 using ResoPackExplorer.Core.Models;
 using ResoPackExplorer.Core.Readers;
+using System.Collections.Generic;
 using System.IO;
 
 [GlobalClass]
@@ -60,11 +61,34 @@ public partial class PackageViewer : Control
 
 			TreeItem treeRoot = _assetTree.CreateItem();
 			_assetTree.HideRoot = true;
+
+			var folderMap = new Dictionary<string, TreeItem>();
+
 			foreach (var (key, size) in packageReader.GetEntries())
             {
-                GD.Print($"{key} ({size} bytes)");
-				TreeItem child = _assetTree.CreateItem(treeRoot);
-				child.SetText(0, $"{key} ({size} bytes)");
+                string[] segments = key.Split('/');
+
+				TreeItem currentParent = treeRoot;
+				string currentPath = "";
+		
+				for (int i = 0; i < segments.Length - 1; i++)
+				{
+					string segment = segments[i];
+					currentPath = string.IsNullOrEmpty(currentPath) ? segment : $"{currentPath}/{segment}";
+					
+					if (!folderMap.TryGetValue(currentPath, out var folderItem))
+					{
+						folderItem = _assetTree.CreateItem(currentParent);
+						folderItem.SetText(0, segment);
+						folderMap[currentPath] = folderItem;
+					}
+
+					currentParent = folderItem;
+				}
+
+				TreeItem fileItem = _assetTree.CreateItem(currentParent);
+				string fileName = segments[segments.Length - 1];
+				fileItem.SetText(0, $"{fileName} ({size} bytes)");
             }
 		}
 	}
