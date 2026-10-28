@@ -43,6 +43,14 @@ namespace ResoPackExplorer.Core.Readers
             .Any(e => !e.IsDirectory && e.Key.Equals(entryKey, StringComparison.OrdinalIgnoreCase));
         }
 
+
+        public IEnumerable<(string Key, long Size)> GetEntries()
+        {
+            return _archive.Entries
+                .Where(e => !e.IsDirectory)
+                .Select(e => (Key: e.Key ?? "Unkown", Size: e.Size));
+        }
+
         public void Dispose()
         {
             if (!_disposed)
