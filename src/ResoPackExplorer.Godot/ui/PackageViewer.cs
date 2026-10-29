@@ -65,11 +65,19 @@ public partial class PackageViewer : Control
 			
 			var assetTypeDetector = new AssetTypeDetector();
 			var folderMap = new Dictionary<string, TreeItem>();
-
+			var typeSubTreeMap = new Dictionary<string, TreeItem>();
 
 			foreach (var (key, size) in packageReader.GetEntries())
             {
-                string[] segments = key.Split('/');
+                string[] segments;
+				if (key.StartsWith("Variants/") && key.IndexOf('/', "Variants/".Length) != -1)
+				{
+					segments = new string[] { "Variants", key.Substring("Variants/".Length) };
+				}
+				else
+				{
+					segments = key.Split('/');
+				}
 
 				TreeItem currentParent = treeRoot;
 				string currentPath = "";
@@ -90,7 +98,7 @@ public partial class PackageViewer : Control
 					currentParent = folderItem;
 				}
 
-				string fileTypeName = "Unkown";
+				string fileTypeName = "Unknown";
 
 				if (size > 0)
 				{
@@ -105,7 +113,17 @@ public partial class PackageViewer : Control
 					}
 				}
 
-				TreeItem fileItem = _assetTree.CreateItem(currentParent);
+				string typeMapKey = $"{currentPath}::{fileTypeName}";
+
+				if (!typeSubTreeMap.TryGetValue(typeMapKey, out var typeSubFolderItem))
+				{
+					typeSubFolderItem = _assetTree.CreateItem(currentParent);
+					typeSubFolderItem.SetText(0, fileTypeName);
+					typeSubTreeMap[typeMapKey] = typeSubFolderItem;
+				}
+
+
+				TreeItem fileItem = _assetTree.CreateItem(typeSubFolderItem);
 				string fileName = segments[segments.Length - 1];
 				fileItem.SetText(0, $"{fileName} [{fileTypeName}] ({size} bytes)");
             }

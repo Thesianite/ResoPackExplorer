@@ -48,7 +48,7 @@ namespace ResoPackExplorer.Core.Readers
         {
             return _archive.Entries
                 .Where(e => !e.IsDirectory)
-                .Select(e => (Key: e.Key ?? "Unkown", Size: e.Size));
+                .Select(e => (Key: e.Key ?? "Unknown", Size: e.Size));
         }
 
         public void Dispose()

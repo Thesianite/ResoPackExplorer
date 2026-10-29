@@ -4,7 +4,7 @@ namespace ResoPackExplorer.Core.Readers
 {
     public class AssetTypeDetector
     {
-        public static readonly AssetType Unkown = new() { Name = "Unkown Type", Extension = ""};
+        public static readonly AssetType Unknown = new() { Name = "Unknown Type", Extension = ""};
         public static readonly AssetType Frdt = new() { Name = "FrDT", Extension=".FrDT"};
 
         private static readonly Dictionary<AssetType, byte[]> _fileSignatures = new()
