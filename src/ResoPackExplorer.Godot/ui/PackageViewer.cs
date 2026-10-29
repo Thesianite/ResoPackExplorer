@@ -93,6 +93,7 @@ public partial class PackageViewer : Control
 						folderItem = _assetTree.CreateItem(currentParent);
 						folderItem.SetText(0, segment);
 						folderMap[currentPath] = folderItem;
+						folderItem.Collapsed = true;
 					}
 
 					currentParent = folderItem;
