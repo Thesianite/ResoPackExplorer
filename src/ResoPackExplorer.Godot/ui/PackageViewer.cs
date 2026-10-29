@@ -59,11 +59,13 @@ public partial class PackageViewer : Control
 			_recordTypeLabel.Text = $"Type: { record.RecordType ?? "Type: N/A"}";
 			_ownerIdLabel.Text = $"Owner: {record.OwnerId ?? "Owner: N/A"}";
 
-
+			_assetTree.Clear();
 			TreeItem treeRoot = _assetTree.CreateItem();
 			_assetTree.HideRoot = true;
-
+			
+			var assetTypeDetector = new AssetTypeDetector();
 			var folderMap = new Dictionary<string, TreeItem>();
+
 
 			foreach (var (key, size) in packageReader.GetEntries())
             {
@@ -76,6 +78,7 @@ public partial class PackageViewer : Control
 				{
 					string segment = segments[i];
 					currentPath = string.IsNullOrEmpty(currentPath) ? segment : $"{currentPath}/{segment}";
+
 					
 					if (!folderMap.TryGetValue(currentPath, out var folderItem))
 					{
@@ -87,13 +90,25 @@ public partial class PackageViewer : Control
 					currentParent = folderItem;
 				}
 
+				string fileTypeName = "Unkown";
+
+				if (size > 0)
+				{
+					using var entryStream = packageReader.GetEntryStream(key);
+					if (entryStream != null)
+					{
+						var detectedType = assetTypeDetector.DetectType(entryStream);
+						if (detectedType != null)
+						{
+							fileTypeName = detectedType.Name;
+						}
+					}
+				}
+
 				TreeItem fileItem = _assetTree.CreateItem(currentParent);
 				string fileName = segments[segments.Length - 1];
-				fileItem.SetText(0, $"{fileName} ({size} bytes)");
+				fileItem.SetText(0, $"{fileName} [{fileTypeName}] ({size} bytes)");
             }
-
-			ResoniteAssetLoader _loader = new ResoniteAssetLoader();
-			_loader.LoadPackageAssets(packagePath);
 		}
 	}
 
