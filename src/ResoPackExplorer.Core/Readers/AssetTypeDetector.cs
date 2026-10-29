@@ -4,7 +4,7 @@ namespace ResoPackExplorer.Core.Readers
 {
     public class AssetTypeDetector
     {
-        public static readonly AssetType Unknown = new() { Name = "Unknown Type", Extension = ""};
+        public static readonly AssetType Unknown = new() { Name = "_Unknown Type", Extension = ""};
         public static readonly AssetType Frdt = new() { Name = "FrDT", Extension=".FrDT"};
         public static readonly AssetType MeshX = new() { Name = "MeshX", Extension=".meshx"};
         public static readonly AssetType Png = new() { Name = "Portable Network Graphics", Extension=".png"};
