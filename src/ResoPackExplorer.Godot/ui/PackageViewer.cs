@@ -121,6 +121,7 @@ public partial class PackageViewer : Control
 					typeSubFolderItem = _assetTree.CreateItem(currentParent);
 					typeSubFolderItem.SetText(0, fileTypeName);
 					typeSubTreeMap[typeMapKey] = typeSubFolderItem;
+					typeSubFolderItem.Collapsed = true;
 				}
 
 
